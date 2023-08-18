@@ -1,0 +1,16 @@
+uuid: e42ea80d-dc3a-41a3-b23e-aaf509dda599
+langcode: en
+status: true
+dependencies: {  }
+name: admin_panel
+label: 'admin panel'
+triggers:
+  login: login
+destination_path: 'internal:/admin_panel'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  administrator: administrator
+weight: 0
+enabled: true

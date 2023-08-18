@@ -24,7 +24,9 @@
         "drupal/core-recommended": "^10.0",
         "drupal/devel": "^5.1",
         "drupal/login_destination": "^2.0@beta",
+        "drupal/miniorange_2fa": "^5.1",
         "drupal/otp_service": "^1.0",
+        "drupal/purge_users": "^4.0@beta",
         "drupal/webprofiler": "^10.1",
         "drush/drush": "^12.1"
     },

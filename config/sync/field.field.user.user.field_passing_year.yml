@@ -1,0 +1,26 @@
+uuid: 1313e223-fd50-4c7e-b54f-789d594a43fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_passing_year
+  module:
+    - user
+id: user.user.field_passing_year
+field_name: field_passing_year
+entity_type: user
+bundle: user
+label: 'Passing year'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 2005
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

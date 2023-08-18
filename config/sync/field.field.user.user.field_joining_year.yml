@@ -1,0 +1,26 @@
+uuid: 6c26b200-6d2e-46b8-a48b-0e9a4f8d82e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_joining_year
+  module:
+    - user
+id: user.user.field_joining_year
+field_name: field_joining_year
+entity_type: user
+bundle: user
+label: 'Joining year'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 2001
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

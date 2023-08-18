@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_email_address_
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_joining_year
+    - field.field.user.user.field_mobile_number
+    - field.field.user.user.field_passing_year
+    - field.field.user.user.field_stream
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
+    - text
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
@@ -16,23 +21,55 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 2
     region: content
-  contact:
-    weight: 5
-    region: content
-  language:
-    weight: 0
-    region: content
-  timezone:
-    weight: 6
-    region: content
-  user_picture:
-    type: image_image
-    weight: -1
+    settings: {  }
+    third_party_settings: {  }
+  field_email_address_:
+    type: email_default
+    weight: 1
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      placeholder: ''
+      size: 60
     third_party_settings: {  }
-hidden: {  }
+  field_full_name:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_joining_year:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_mobile_number:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_passing_year:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_stream:
+    type: options_buttons
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contact: true
+  language: true
+  timezone: true
+  user_picture: true

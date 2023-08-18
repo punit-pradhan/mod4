@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4cd2aa22373d9ccaadf2f5907a7f0e15",
+    "content-hash": "b39489a4c70d7b4ae314c28d3090814f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2022,6 +2022,62 @@
             }
         },
         {
+            "name": "drupal/miniorange_2fa",
+            "version": "5.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/miniorange_2fa.git",
+                "reference": "5.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/miniorange_2fa-5.1.2.zip",
+                "reference": "5.1.2",
+                "shasum": "06853ee55ec98e98c4da30a5a62434e7e507891b"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "5.1.2",
+                    "datestamp": "1691748488",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "abhay19",
+                    "homepage": "https://www.drupal.org/user/3549350"
+                },
+                {
+                    "name": "arsh244",
+                    "homepage": "https://www.drupal.org/user/3619504"
+                },
+                {
+                    "name": "gauravsood91",
+                    "homepage": "https://www.drupal.org/user/3288491"
+                },
+                {
+                    "name": "Shrishail Hiremath",
+                    "homepage": "https://www.drupal.org/user/3669372"
+                }
+            ],
+            "description": "Easily add Second Factor Authentication to protect sites from unauthorized login attempts.",
+            "homepage": "https://www.drupal.org/project/miniorange_2fa",
+            "support": {
+                "source": "https://git.drupalcode.org/project/miniorange_2fa"
+            }
+        },
+        {
             "name": "drupal/otp_service",
             "version": "1.0.0",
             "source": {
@@ -2080,6 +2136,58 @@
             "homepage": "https://www.drupal.org/project/otp_service",
             "support": {
                 "source": "https://git.drupalcode.org/project/otp_service"
+            }
+        },
+        {
+            "name": "drupal/purge_users",
+            "version": "4.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/purge_users.git",
+                "reference": "4.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/purge_users-4.0.0-beta2.zip",
+                "reference": "4.0.0-beta2",
+                "shasum": "73d669eab0cac5238f6d20a124d068d1f11a2e18"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.0-beta2",
+                    "datestamp": "1683901269",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "Er.Sajal",
+                    "homepage": "https://www.drupal.org/user/3418765"
+                },
+                {
+                    "name": "jim.applebee",
+                    "homepage": "https://www.drupal.org/user/2498674"
+                }
+            ],
+            "description": "Purge inactive users after a set interval.",
+            "homepage": "https://www.drupal.org/project/purge_users",
+            "support": {
+                "source": "https://git.drupalcode.org/project/purge_users"
             }
         },
         {
@@ -11228,7 +11336,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/login_destination": 10
+        "drupal/login_destination": 10,
+        "drupal/purge_users": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

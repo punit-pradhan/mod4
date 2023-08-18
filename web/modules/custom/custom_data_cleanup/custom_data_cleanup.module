@@ -1,0 +1,52 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+/**
+ * Implements hook_cron().
+ */
+function custom_data_cleanup_cron() {
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  // Delete user entities with field_passing_year more than 6 months ago
+  delete_expired_users($entity_type_manager);
+
+  // Delete nodes of the "Notice" content type with passed notice dates
+  delete_expired_notices($entity_type_manager);
+}
+
+/**
+ * Delete user entities with field_passing_year more than 6 months ago.
+ */
+function delete_expired_users(EntityTypeManagerInterface $entity_type_manager) {
+  $six_months_ago = strtotime('-6 months');
+  $user_storage = $entity_type_manager->getStorage('user');
+
+  $query = $user_storage->getQuery()
+    ->condition('status', [0, 1], 'IN') // Both active and inactive users
+    ->condition('field_passing_year', $six_months_ago, '<');
+
+  $uids_to_delete = $query->execute();
+
+  if (!empty($uids_to_delete)) {
+    $user_storage->delete($uids_to_delete);
+  }
+}
+
+/**
+ * Delete nodes of the "Notice" content type with passed notice dates.
+ */
+function delete_expired_notices(EntityTypeManagerInterface $entity_type_manager) {
+  $current_time = \Drupal::time()->getRequestTime();
+  $notice_storage = $entity_type_manager->getStorage('node');
+
+  $query = $notice_storage->getQuery()
+    ->condition('type', 'notice') 
+    ->condition('field_notice_date_', $current_time, '<');
+
+  $nids_to_delete = $query->execute();
+
+  if (!empty($nids_to_delete)) {
+    $notice_storage->delete($nids_to_delete);
+  }
+}
